@@ -39,7 +39,7 @@ public class MyWorld extends World
         Meteor[] numOfMeteors = new Meteor [Greenfoot.getRandomNumber(10)];
         for (int i = 0; i < numOfMeteors.length; i++) {
             int inicialPositionY = Greenfoot.getRandomNumber(getHeight());
-            int inicialPositionX = Greenfoot.getRandomNumber(1000);
+            int inicialPositionX = Greenfoot.getRandomNumber(1100);
             numOfMeteors[i] = new Meteor();
             addObject(numOfMeteors[i], inicialPositionX, inicialPositionY);
         }
