@@ -16,7 +16,7 @@ public class Meteor extends Actor
     public Meteor()
     {
         GreenfootImage meteorImage = getImage();
-        meteorImage.scale(90, 90);
+        meteorImage.scale(70, 70);
     }
     
     public void move()

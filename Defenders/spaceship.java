@@ -38,5 +38,8 @@ public class Spaceship extends Actor
         {
             setLocation(getX() + 4, getY());
         }
+        if (isTouching(Meteor.class)){
+            setLocation(77,304);
+        }
     }
 }
