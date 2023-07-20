@@ -12,17 +12,19 @@ public class Meteor extends Actor
      * Act - do whatever the meteor wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    int speed;
     
-    public Meteor()
+    public Meteor(int speed)
     {
         GreenfootImage meteorImage = getImage();
-        meteorImage.scale(70, 70);
+        meteorImage.scale(50, 50);
+        this.speed = speed;
     }
     
     public void move()
     {
-        setLocation(getX() - 6, getY());
-        if (isAtEdge()) {
+        setLocation(getX() - speed, getY());
+        if (isAtEdge() || isTouching(Laser.class)) {
             getWorld().removeObject(this);
         }
     }

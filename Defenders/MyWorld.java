@@ -29,25 +29,22 @@ public class MyWorld extends World
         Spaceship spaceship = new Spaceship();
         addObject(spaceship,168,307);
         spaceship.setLocation(77,304);
-        Meteor meteor = new Meteor();
         act();
     }
     
     public void generateMeteors()
     {
-        Meteor meteor = new Meteor();
-        Meteor[] numOfMeteors = new Meteor [Greenfoot.getRandomNumber(10)];
-        for (int i = 0; i < numOfMeteors.length; i++) {
+        if (numberOfObjects() <= 8) 
+        {
             int inicialPositionY = Greenfoot.getRandomNumber(getHeight());
-            int inicialPositionX = Greenfoot.getRandomNumber(1100);
-            numOfMeteors[i] = new Meteor();
-            addObject(numOfMeteors[i], inicialPositionX, inicialPositionY);
+            int inicialPositionX = 1500;
+            Meteor met = new Meteor(Greenfoot.getRandomNumber(3)+6);
+            addObject(met, inicialPositionX, inicialPositionY);
         }
+         
     }
     
     public void act() {
-        if (numberOfObjects() <= 5) {
-            generateMeteors();
-        }         
+        generateMeteors();
     }
 }
