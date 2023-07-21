@@ -53,6 +53,7 @@ public class Spaceship extends Actor
             {
                 Laser shoot = new Laser();
                 getWorld().addObject(shoot,getX(),getY()); 
+                Greenfoot.playSound("Disparo2.wav");
             }
         }
     }
