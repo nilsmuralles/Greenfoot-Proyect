@@ -13,6 +13,7 @@ public class Meteor extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int speed;
+    private boolean removed = false;
     
     public Meteor(int speed)
     {
@@ -24,9 +25,15 @@ public class Meteor extends Actor
     public void move()
     {
         setLocation(getX() - speed, getY());
-        if (isAtEdge() || isTouching(Laser.class)) {
+        if (isTouching(Laser.class)) {
             getWorld().removeObject(this);
-            
+            removed = true;
+            MyWorld.score.setValue(MyWorld.score.getValue()+1);
+        }
+        if (removed == false) {
+            if (isAtEdge()) {
+                getWorld().removeObject(this);
+            }
         }
     }
     

@@ -44,6 +44,7 @@ public class Spaceship extends Actor
             setLocation(77,304);
             MyWorld.lifeCount.setValue(MyWorld.lifeCount.getValue()-1);
             if (MyWorld.lifeCount.getValue() == 0) {
+                MyWorld.score.setValue(0);
                 MyWorld.backgroundMusic.stop();
                 Greenfoot.setWorld(new Menu());
             }

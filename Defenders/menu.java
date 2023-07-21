@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menu extends World
 {
+    public static GreenfootSound menuTheme = new GreenfootSound("menuaudio.wav");
     Play playButton = new Play();
     Logo gameLogo = new Logo();
     Exit exitButton = new Exit();
@@ -19,7 +20,7 @@ public class Menu extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(910, 584, 1); 
-        prepare();      
+        prepare();   
     }
     
     private void prepare() {
@@ -37,6 +38,7 @@ public class Menu extends World
             playButton.setImage("jugarmenu.png");
         }
         if (Greenfoot.mouseClicked(playButton)) {
+            menuTheme.stop();
             Greenfoot.setWorld(new MyWorld());
         }
         
@@ -50,5 +52,9 @@ public class Menu extends World
         if (Greenfoot.mouseClicked(exitButton)) {
             Greenfoot.stop();
         }
+    }
+    public void started(){
+        menuTheme.playLoop();
+        menuTheme.setVolume(45);
     }
 }

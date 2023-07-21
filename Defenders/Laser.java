@@ -25,7 +25,6 @@ public class Laser extends Actor
         if (isAtEdge())
         {
             getWorld().removeObject(this);
-            
         }
     }
     

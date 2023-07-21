@@ -9,7 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public static Counter lifeCount = new Counter();
+    public static Counter score = new Counter();
     public static GreenfootSound backgroundMusic;
+    public static Label scoreText = new Label("Puntaje", 32);
+    public static Label lifeText = new Label("Vidas", 32);
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,6 +23,14 @@ public class MyWorld extends World
         super(910, 584, 1);
         addObject(lifeCount, 750 ,500);
         lifeCount.setValue(5);
+        addObject(lifeText, 675, 475);
+        lifeText.setFillColor(Color.BLACK);
+        lifeText.setLineColor(Color.BLUE);
+        
+        addObject(score, 150, 75);
+        addObject(scoreText, 80, 100);
+        scoreText.setFillColor(Color.BLACK);
+        scoreText.setLineColor(Color.BLUE);
         prepare();
         
         backgroundMusic = new GreenfootSound("disparo.wav");
