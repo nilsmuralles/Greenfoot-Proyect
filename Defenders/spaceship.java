@@ -42,13 +42,17 @@ public class Spaceship extends Actor
         }
         if (isTouching(Meteor.class)){
             setLocation(77,304);
+            MyWorld.lifeCount.setValue(MyWorld.lifeCount.getValue()-1);
+            if (MyWorld.lifeCount.getValue() == 0) { 
+                MyWorld.lifeCount.setValue(5);
+            }
         }
         if (Greenfoot.isKeyDown("space"))
         {
             if (getWorld().getObjects(Laser.class).size() < 1) 
             {
                 Laser shoot = new Laser();
-             getWorld().addObject(shoot,getX(),getY()); 
+                getWorld().addObject(shoot,getX(),getY()); 
             }
         }
     }
