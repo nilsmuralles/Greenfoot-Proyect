@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public static Counter lifeCount = new Counter();
+    public static GreenfootSound backgroundMusic;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,6 +21,10 @@ public class MyWorld extends World
         addObject(lifeCount, 750 ,500);
         lifeCount.setValue(5);
         prepare();
+        
+        backgroundMusic = new GreenfootSound("disparo.wav");
+        backgroundMusic.playLoop();
+        backgroundMusic.setVolume(45);
     }
     
     /**
@@ -49,4 +54,5 @@ public class MyWorld extends World
     public void act() {
         generateMeteors();
     }
+
 }

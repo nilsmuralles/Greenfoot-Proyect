@@ -26,6 +26,7 @@ public class Meteor extends Actor
         setLocation(getX() - speed, getY());
         if (isAtEdge() || isTouching(Laser.class)) {
             getWorld().removeObject(this);
+            
         }
     }
     

@@ -43,8 +43,9 @@ public class Spaceship extends Actor
         if (isTouching(Meteor.class)){
             setLocation(77,304);
             MyWorld.lifeCount.setValue(MyWorld.lifeCount.getValue()-1);
-            if (MyWorld.lifeCount.getValue() == 0) { 
-                MyWorld.lifeCount.setValue(5);
+            if (MyWorld.lifeCount.getValue() == 0) {
+                MyWorld.backgroundMusic.stop();
+                Greenfoot.setWorld(new Menu());
             }
         }
         if (Greenfoot.isKeyDown("space"))
@@ -53,6 +54,7 @@ public class Spaceship extends Actor
             {
                 Laser shoot = new Laser();
                 getWorld().addObject(shoot,getX(),getY()); 
+                Greenfoot.playSound("Disparo2.wav");
             }
         }
     }
