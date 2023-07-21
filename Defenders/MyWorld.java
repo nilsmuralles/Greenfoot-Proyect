@@ -20,6 +20,10 @@ public class MyWorld extends World
         addObject(lifeCount, 750 ,500);
         lifeCount.setValue(5);
         prepare();
+        
+        GreenfootSound backgroundMusic = new GreenfootSound("disparo.wav");
+        backgroundMusic.playLoop();
+        backgroundMusic.setVolume(45);
     }
     
     /**
