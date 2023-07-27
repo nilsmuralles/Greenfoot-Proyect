@@ -11,4 +11,6 @@ comment3.params=
 comment3.target=void\ generateMeteors()
 comment4.params=
 comment4.target=void\ act()
-numComments=5
+comment5.params=
+comment5.target=Counter\ getCounter()
+numComments=6

@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public static Counter lifeCount = new Counter();
     public static Counter score = new Counter();
+    public static Counter lifeCount = new Counter();
     public static GreenfootSound backgroundMusic;
     public static Label scoreText = new Label("Puntaje", 32);
     public static Label lifeText = new Label("Vidas", 32);
@@ -65,5 +65,8 @@ public class MyWorld extends World
     public void act() {
         generateMeteors();
     }
-
+    
+    public static Counter getCounter() {
+        return score;
+    }
 }

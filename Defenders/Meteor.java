@@ -26,16 +26,16 @@ public class Meteor extends Actor
     {
         setLocation(getX() - speed, getY());
         if (isTouching(Laser.class)) {
-            getWorld().removeObject(this);
-            removed = true;
-            MyWorld.score.setValue(MyWorld.score.getValue()+1);
+        getWorld().removeObject(this);
+        removed = true;
+        MyWorld.score.setValue(MyWorld.score.getValue()+1);
+        TimeTrial.ttCounter.setValue(TimeTrial.ttCounter.getValue()+1);
         }
         if (removed == false) {
-            if (isAtEdge()) {
-                getWorld().removeObject(this);
-            }
+        if (isAtEdge()) {
+            getWorld().removeObject(this);
         }
-    }
+    }}
     
     public void act()
     {
