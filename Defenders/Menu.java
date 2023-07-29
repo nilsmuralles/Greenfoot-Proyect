@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menu extends World
 {
-    public static GreenfootSound menuTheme = new GreenfootSound("menuaudio.wav");
+    //public static GreenfootSound menuTheme = new GreenfootSound("menuaudio.wav");
+    public static GreenfootSound backgroundMusic;
     Play playButton = new Play();
     Logo gameLogo = new Logo();
     Exit exitButton = new Exit();
@@ -21,8 +22,10 @@ public class Menu extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(910, 584, 1); 
+        
         //Greenfoot.setWorld(new TimeTrial());
-        prepare();   
+        prepare();  
+        
     }
     
     private void prepare() {
@@ -30,6 +33,10 @@ public class Menu extends World
         addObject(playButton, 300, 100);
         addObject(ttButton, 300, 200);
         addObject(exitButton, 300, 350);
+         
+        backgroundMusic = new GreenfootSound("menuaudio.wav");
+        backgroundMusic.playLoop();
+        backgroundMusic.setVolume(45);
     }
     
     public void act(){
@@ -41,7 +48,7 @@ public class Menu extends World
             playButton.setImage("jugarmenu.png");
         }
         if (Greenfoot.mouseClicked(playButton)) {
-            menuTheme.stop();
+            backgroundMusic.stop();
             Greenfoot.setWorld(new MyWorld());
         }
         
@@ -64,12 +71,12 @@ public class Menu extends World
             ttButton.setImage("ttmenu.png");
         }
         if (Greenfoot.mouseClicked(ttButton)) {
-            menuTheme.stop();
+            backgroundMusic.stop();
             Greenfoot.setWorld(new TimeTrial());
         }
     }
-    public void started(){
-        menuTheme.playLoop();
-        menuTheme.setVolume(45);
-    }
+    //public void started(){
+       // menuTheme.playLoop();
+        //menuTheme.setVolume(45);
+    //}
 }

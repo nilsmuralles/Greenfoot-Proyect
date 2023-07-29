@@ -30,7 +30,7 @@ public class TimeTrial extends World
         timer.mark();
         prepare();
         
-        backgroundMusic = new GreenfootSound("Contrareloj.wav");
+        backgroundMusic = new GreenfootSound("contrareloj2.wav");
         backgroundMusic.playLoop();
         backgroundMusic.setVolume(45);
         
