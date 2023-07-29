@@ -12,6 +12,7 @@ public class TimeTrial extends World
     public static Label ttScoreText = new Label("Puntaje", 32);
     public static SimpleTimer timer = new SimpleTimer();
     public static TTCounter timeCount = new TTCounter();
+    public static GreenfootSound backgroundMusic;
     /**
      * Constructor for objects of class TimeTrial.
      * 
@@ -28,6 +29,11 @@ public class TimeTrial extends World
         addObject(timeCount, getWidth()/2, getHeight() - 60);
         timer.mark();
         prepare();
+        
+        backgroundMusic = new GreenfootSound("Contrareloj.wav");
+        backgroundMusic.playLoop();
+        backgroundMusic.setVolume(45);
+        
     }
     
     public void prepare()
@@ -56,6 +62,8 @@ public class TimeTrial extends World
         if (timeCount.getValue() == 60) {
             MyWorld.score.setValue(0);
             Greenfoot.setWorld(new Menu());
+            backgroundMusic.stop();
         }
     }
+    
 }
